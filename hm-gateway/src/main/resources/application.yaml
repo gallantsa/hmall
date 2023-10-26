@@ -30,6 +30,7 @@ spring:
             - Path=/pay-orders/**
       default-filters:
         - AddRequestHeader=truth, HuGe is very Handsome! # 逗号之前是请求头的key，逗号之后是value
+        - PrintAny=1,2,3
     nacos:
       server-addr: 192.168.10.140:8848
 logging:
