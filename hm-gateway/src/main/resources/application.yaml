@@ -1,0 +1,27 @@
+server:
+  port: 10010
+spring:
+  application:
+    name: gateway
+  profiles:
+    active: dev
+  cloud:
+    gateway:
+      routes:
+        - id: item-service
+          uri: lb://item-service
+          predicates:
+            - Path=/items/**,/search/**
+        - id: user-service
+          uri: lb://user-service
+          predicates:
+            - Path=/addresses/**,/users/**
+    nacos:
+      server-addr: 192.168.10.140:8848
+logging:
+  level:
+    com.hmall: debug
+  pattern:
+    dateformat: HH:mm:ss:SSS
+  file:
+    path: "logs/${spring.application.name}"
