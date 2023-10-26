@@ -20,13 +20,13 @@ mybatis-plus:
     db-config:
       update-strategy: not_null
       id-type: auto
-logging:
-  level:
-    com.hmall: debug
-  pattern:
-    dateformat: HH:mm:ss:SSS
-  file:
-    path: "logs/${spring.application.name}"
+  logging:
+    level:
+      com.hmall: debug
+    pattern:
+      dateformat: HH:mm:ss:SSS
+    file:
+      path: "logs/${spring.application.name}"
 knife4j:
   enable: true
   openapi:
