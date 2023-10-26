@@ -52,12 +52,14 @@ public class LoginGlobalFilter implements GlobalFilter, Ordered {
             // 直接结束
             return response.setComplete();
         }
-        System.out.println("userId = " + userId);
-        // TODO 5. 传递用户信息到下游服务
-
+        // 5. 传递用户信息到下游服务
+        String userInfo = userId.toString();
+        ServerWebExchange exc = exchange.mutate()
+                .request(builder -> builder.header("user-info", userInfo))
+                .build();
 
         // 6. 放行
-        return null;
+        return chain.filter(exc);
     }
 
     private boolean isAllowPath(ServerHttpRequest request) {
