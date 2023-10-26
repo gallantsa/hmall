@@ -6,3 +6,6 @@ hm:
   swagger:
     title: 购物车接口文档
     package: com.hmall.cart.controller
+  cart:
+    maxSize: 2 # 购物车购物
+
