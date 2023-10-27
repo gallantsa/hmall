@@ -9,3 +9,9 @@ hm:
   cart:
     maxSize: 2 # 购物车购物
 
+spring:
+  cloud:
+    sentinel:
+      transport:
+        dashboard: localhost:8090 # sentinel控制台地址
+      http-method-specify: true # 开启请求方式前缀
